@@ -1,0 +1,5 @@
+F:\Steam\steamapps\common\RimWorld\Mods\Heat\Assemblies\GunHeat.dll
+F:\Steam\steamapps\common\RimWorld\Mods\Heat\Assemblies\GunHeat.pdb
+F:\Steam\steamapps\common\RimWorld\Mods\Heat\GunHeat\GunHeat\obj\Debug\GunHeat.csprojAssemblyReference.cache
+F:\Steam\steamapps\common\RimWorld\Mods\Heat\GunHeat\GunHeat\obj\Debug\GunHeat.dll
+F:\Steam\steamapps\common\RimWorld\Mods\Heat\GunHeat\GunHeat\obj\Debug\GunHeat.pdb

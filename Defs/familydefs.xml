@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <GunHeat.WeaponFamilyDef>
+        <defName>M16A1s</defName>
+        <label>M16</label>
+        <names>
+            <li>m16a1</li>
+            <li>m16</li>
+        </names>
+        <heatmax>140</heatmax>
+        <heatdis>0.20</heatdis>
+        <shift>2.05</shift>
+        <barrelChangeRequiresTools>true</barrelChangeRequiresTools>
+    </GunHeat.WeaponFamilyDef>
+
+    <GunHeat.WeaponFamilyDef>
+        <defName>M16A2s</defName>
+        <label>M16A2</label>
+        <names>
+            <li>m16a2</li>
+            <li>m16a4</li>
+            <li>m16a5</li>
+        </names>
+        <heatmax>170</heatmax>
+        <heatdis>0.20</heatdis>
+        <shift>1.65</shift>
+        <barrelChangeRequiresTools>true</barrelChangeRequiresTools>
+    </GunHeat.WeaponFamilyDef>
+
+    <GunHeat.WeaponFamilyDef>
+        <defName>AK100s</defName>
+        <label>AK100</label>
+        <names>
+            <li>ak105</li>
+            <li>ak104</li>
+            <li>ak103</li>
+            <li>ak102</li>
+            <li>ak101</li>
+            <li>ak12</li>
+        </names>
+        <heatmax>200</heatmax>
+        <heatdis>0.20</heatdis>
+        <shift>1.15</shift>
+        <barrelChangeRequiresTools>true</barrelChangeRequiresTools>
+    </GunHeat.WeaponFamilyDef>
+
+    <GunHeat.WeaponFamilyDef>
+        <defName>ak74s</defName>
+        <label>ak74</label>
+        <names>
+            <li>ak74</li>
+            <li>aks74</li>
+            <li>ak74n</li>
+            <li>aks74n</li>
+            <li>aks74u</li>
+        </names>
+        <heatmax>180</heatmax>
+        <heatdis>0.20</heatdis>
+        <shift>1.85</shift>
+        <barrelChangeRequiresTools>true</barrelChangeRequiresTools>
+    </GunHeat.WeaponFamilyDef>
+    
+    <GunHeat.WeaponFamilyDef>
+        <defName>Old76239AKS</defName>
+        <label>Old AK</label>
+        <names>
+            <li>ak47</li>
+            <li>akm</li>
+            
+        </names>
+        <heatmax>170</heatmax>
+        <heatdis>0.16</heatdis>
+        <shift>2</shift>
+        <barrelChangeRequiresTools>true</barrelChangeRequiresTools>
+    </GunHeat.WeaponFamilyDef>
+
+    <GunHeat.WeaponFamilyDef>
+        <defName>g36</defName>
+        <label>G36</label>
+        <names>
+            <li>g36</li>
+            <li>g36c</li>
+            <li>g36k</li>
+        </names>
+        <heatmax>130</heatmax>
+        <heatdis>0.16</heatdis>
+        <shift>1.8</shift>
+    </GunHeat.WeaponFamilyDef>
+
+    <GunHeat.WeaponFamilyDef>
+        <defName>AUG</defName>
+        <label>AUG</label>
+        <names>
+            <li>aug</li>
+            <li>steyr aug</li>
+            <li>aug a1</li>
+            <li>aug a2</li>
+            <li>aug a3</li>
+            <li>carbine</li>
+            <li>steur aug a1</li>
+            <li>steyr aug a2</li>
+            <li>steyr aug a3</li>
+        </names>
+        <heatmax>180</heatmax>
+        <heatdis>0.15</heatdis>
+        <shift>1.5</shift>
+    </GunHeat.WeaponFamilyDef>
+
+    <GunHeat.WeaponFamilyDef>
+        <defName>SKS</defName>
+        <label>SKS</label>
+        <names>
+            <li>sks</li>
+            <li>vz58</li>
+        </names>
+        <heatmax>170</heatmax>
+        <heatdis>0.2</heatdis>
+        <shift>1</shift>
+    </GunHeat.WeaponFamilyDef>
+
+    <GunHeat.WeaponFamilyDef>
+        <defName>scar</defName>
+        <label>scar</label>
+        <names>
+            <li>scarl</li>
+            <li>scarh</li>
+            <li>scar</li>
+        </names>
+        <heatmax>210</heatmax>
+        <heatdis>0.15</heatdis>
+        <shift>0.5</shift>
+    </GunHeat.WeaponFamilyDef>
+
+    <GunHeat.WeaponFamilyDef>
+        <defName>LMGs</defName>
+        <label>LMG</label>
+        <names>
+            <li>pkm</li>
+            <li>pkp</li>
+            <li>m249</li>
+            <li>m60</li>
+            <li>m240</li>
+        </names>
+        <heatmax>500</heatmax>
+        <heatdis>0.05</heatdis>
+        <shift>0.1</shift>
+        <tags>
+            <li>Bipod_LMG</li>
+            <li>Bipod_SAW</li>
+            <li>CE_AI_LMG</li>
+            <li>CE_MachineGun</li>
+        </tags>
+    </GunHeat.WeaponFamilyDef>
+</Defs>
