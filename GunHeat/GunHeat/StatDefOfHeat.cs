@@ -18,8 +18,6 @@ namespace GunHeat
     {
         public static StatDef reliabilityStatDEf_HEat;
 
-        public static JobDef FixJamJobDef;
-
         public static ThingDef TableMachining;
 
         public static JobDef FixCatMalfDef;

@@ -37,6 +37,15 @@ namespace GunHeat
 
             foreach (AmmoDef ammo in DefDatabase<AmmoDef>.AllDefs)
             {
+                string[] strs = new string[] { 
+                    "fullmetaljacket" ,
+                    "hollowpoint",
+                    "armorpiercing",
+                    "sabot",
+                    "incendiaryap",
+                    "explosiveap"
+                };
+                
                 switch (ammo?.ammoClass?.defName.ToLower() ?? "")
                 {
                     case "fullmetaljacket":
@@ -59,6 +68,11 @@ namespace GunHeat
                         break;
 
 
+                }
+
+                if (!strs.Contains((ammo?.ammoClass?.defName.ToLower() ?? "")))
+                {
+                    ammo.AddModExt(new HeatModExt { heatPerShot = 2f });
                 }
             }
 
@@ -118,6 +132,8 @@ namespace GunHeat
                         }
 
                         gun.AddModExt(new FamilyModExt { familydef = def });
+
+                        gun.tickerType = TickerType.Normal;
                     }
                 }
 
@@ -585,8 +601,6 @@ namespace GunHeat
                 {
                     curHeat -= heatDis;
                 }
-
-
                 ticks = tickMax;
             }
 
@@ -705,13 +719,16 @@ namespace GunHeat
                         }
                     }
 
-                    yield return new Command_Action
+                    if (!opts.NullOrEmpty())
                     {
-                        defaultLabel = "swap barrel",
-                        defaultDesc = "swap barrel",
-                        icon = ContentFinder<Texture2D>.Get(ThingDefOf.ReinforcedBarrel.graphicData.texPath),
-                        action = delegate { Find.WindowStack.Add(new FloatMenu(opts)); }
-                    };
+                        yield return new Command_Action
+                        {
+                            defaultLabel = "swap barrel",
+                            defaultDesc = "swap barrel",
+                            icon = ContentFinder<Texture2D>.Get(ThingDefOf.ReinforcedBarrel.graphicData.texPath),
+                            action = delegate { Find.WindowStack.Add(new FloatMenu(opts)); }
+                        };
+                    }
 
                 }
             }
@@ -731,6 +748,7 @@ namespace GunHeat
             {
                 JobDef jobdef = new JobDef { driverClass = typeof(SwitchBarrel), reportString = "swapping barrel" };
                 var newJob = JobMaker.MakeJob(jobdef, barrel, this.parent);
+                newJob.count = 1;
                 actor.jobs.StartJob(newJob, JobCondition.InterruptForced);
             };
         }
@@ -741,7 +759,9 @@ namespace GunHeat
             {
                 if (capExt.BarrelSwapRequiresTools | (!curMalf?.fieldClearable ?? true))
                 {
-                    yield return new FloatMenuOption("haul to machining bench", delegate { selPawn.jobs.StartJob(new Job(JobDefOf.HaulToCell, targetA: this.parent, targetB: Find.CurrentMap.listerThings.AllThings.Where(x => x.def.defName == "TableMachining").MinBy(y => y.Position.DistanceTo(selPawn.Position))), JobCondition.InterruptForced); });
+                    yield return new FloatMenuOption("haul to machining bench", delegate { selPawn.jobs.StartJob(new Job(JobDefOf.HaulToCell, targetA: this.parent, targetB:
+                        Find.CurrentMap.listerThings.AllThings.Where(x => x.def.defName == "TableMachining").MinBy(y => y.Position.DistanceTo(selPawn.Position)))   {count = 1 }
+                        , JobCondition.InterruptForced); });
                 }
             }
             
@@ -760,7 +780,9 @@ namespace GunHeat
                 yield return new FloatMenuOption("Fix catastrophic malfunction", 
                     delegate
                     {
-                        var Job = JobMaker.MakeJob( StatDefOfHeat.FixCatMalfDef, this.parent);
+                        var Job = JobMaker.MakeJob( StatDefOfHeat.FixCatMalfDef, this.parent) ;
+
+                        Job.count = 1;
 
                         selPawn.jobs.StartJob(Job, JobCondition.InterruptForced);
                     }

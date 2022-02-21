@@ -33,7 +33,7 @@
       <defName>FTF</defName>
       <label>failure to fire</label>
       <baseChance>0.01</baseChance>
-      <optimalHeat>0~30</optimalHeat>
+      <optimalHeat>2~2</optimalHeat>
       <timeToClear>1</timeToClear>
       <minHeat>0</minHeat>
     </GunHeat.MalfunctionTypeDef>

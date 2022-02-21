@@ -74,6 +74,14 @@ namespace GunHeat
 
             lmgBarrel.tickerType = TickerType.Normal;
 
+            lmgBarrel.stuffProps = new StuffProperties();
+
+            lmgBarrel.stuffCategories = new List<StuffCategoryDef>();
+
+            lmgBarrel.mineable = false;
+
+            lmgBarrel.deepCommonality = 0f;
+
             DefGenerator.AddImpliedDef<ThingDef>(lmgBarrel);
 
             DefDatabase<ThingDef>.AllDefs.AddItem(lmgBarrel);
@@ -139,15 +147,6 @@ namespace GunHeat
             get
             {
                 return DefDatabase<ThingDef>.AllDefsListForReading.Find(x => x.defName == "LMGbarrel");
-            }
-        }
-
-        public static JobDef FixJamJobDef
-        {
-            get
-            {
-
-                return StatDefOfHeat.FixJamJobDef;
             }
         }
 
